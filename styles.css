@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'MyFont'; /* El nombre que quieres darle a la fuente */
+    src: url('fonts/ScienceAndFiction.ttf') format('truetype'); /* La ruta del archivo .ttf */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MyFont', sans-serif;
+    width:100%;
+    height:100%;
+}
+
+header {
+    background: linear-gradient(to bottom, rgb(0, 0, 0),rgb(37, 0, 50),rgb(6, 48, 70), rgb(1, 30, 41)); /* Gradiente transparente */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Necesario para el efecto de luz de neón */
+}
+
+.logo {
+    width: 40%; /* El 30% del espacio disponible */
+}
+.logo img {
+    height:15rem; /* Ajusta la altura del logo según sea necesario */
+}
+
+.buttons {
+    width: 60%; 
+    display: flex;
+    justify-content: space-around; /* Espacio entre los botones */
+}
+
+.circular-button img {
+    width: 9rem; /* Ancho del botón */
+    height: 9rem; /* Altura del botón */
+    border-radius: 50%; /* Hace el botón circular */
+}
+
+header::before,
+header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px 10px #000000, 0 0 40px 20px #bf00ff, 0 0 60px 30px #00eeff; /* Efecto de luz de neón */
+    pointer-events: none; /* Evita la interacción del usuario con los pseudo-elementos */
+}
+
+header::before {
+    top: 0;
+    left: 0;
+}
+
+header::after {
+    bottom: 0;
+    right: 0;
+}
+
+#background-video {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 180%;
+    width: 100%;
+    height: 200%;
+    z-index: -1;
+    background-size: cover;
+    overflow: scroll;
+}
+.video-container {
+    position: relative;
+    background-color:#002835;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 3em;
+    left: 2em;
+    background-color: #00ddff9d; /* Fondo transparente */
+    padding: 20px;
+    max-width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); /* Sin sombra */
+}
+
+.text-container {
+    max-width: 80%;
+}
+
+.text-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.text-container h2 {
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+.content {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre el video */
+}
+
+.titanicword{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #0d4051;
+}
+
+.overlay2 {
+    position: absolute;
+    bottom: 3em;
+    right: 2em;
+    background-color: #f200ff9d; /* Fondo transparente */
+    padding: 20px;
+    max-width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); /* Sin sombra */
+}
+
+.text-container2 {
+    max-width: 80%;
+}
+
+.text-container2 h1 {
+    font-size: 5em;
+    margin-bottom: 10px;
+    color: #501365;
+}
+
+.text-container2 p {
+    margin-top: 2em;
+    font-size: 1.8em;
+    font-weight:bolder;
+    color: #000000;
+}
+
+
+footer {
+    background: linear-gradient(to right, black, black); /* Gradiente transparente */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Necesario para el efecto de luz de neón */
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px 10px #000000, 0 0 40px 20px #bf00ff, 0 0 60px 30px #00eeff; /* Efecto de luz de neón */
+    pointer-events: none;
+}
+.footer-info {
+    width: 100%; 
+    display: flex;
+    justify-content: space-around; /* Espacio entre los botones */
+    align-items: center;
+}
+
+.footer-info p{
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    /* background: linear-gradient(to top, #007396, #002835); */
+    background: #002835;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 6em;
+
+  }
+  .step {
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+  .step-header {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #e100ff;
+    width: 55%;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #501365;
+  }
+  .step-content {
+    color: #3c0050;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    display: none;
+    padding: 10px;
+    background-color: #a600bc;
+    font-size: 1.2em;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 55%;
+
+  }
+
+
+
+
